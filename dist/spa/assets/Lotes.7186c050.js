@@ -1,0 +1,1 @@
+import{_ as e}from"./plugin-vue_export-helper.21dcd24c.js";import{T as o,ah as s,a2 as t}from"./index.87babf8f.js";const c={},r={class:"row"},a=t("article",{class:"flex flex-center col-12"},null,-1),_=[a];function n(l,f){return o(),s("div",r,_)}var m=e(c,[["render",n]]);export{m as default};
