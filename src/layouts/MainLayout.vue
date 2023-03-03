@@ -2,7 +2,7 @@
   <q-layout view="hHh lpR fFf">
 
     <q-header elevated class="color text-white">
-      <q-toolbar >
+      <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
         <q-toolbar-title>
           <q-avatar>
@@ -10,7 +10,8 @@
           </q-avatar>
           Farm Manager
         </q-toolbar-title>
-        <q-btn icon="mdi-login-variant" class="bg-primary" @click="logout"></q-btn>
+        <q-btn icon="mdi-login" class="bg-info q-mr-sm" @click="router.push('/login')"></q-btn>
+        <q-btn v-if="store.token != undefined" icon="mdi-login-variant" class="bg-negative" @click="logout"></q-btn>
       </q-toolbar>
     </q-header>
 
@@ -38,19 +39,20 @@ import { ref } from 'vue'
 import { useStore } from '../stores/store.js'
 import { useRouter } from 'vue-router';
 const router = useRouter()
+const store = useStore()
 
-let tok = ref(0)
+console.log("token: " + store.token);
+
 const date = new Date()
 const leftDrawerOpen = ref(false)
 const toggleLeftDrawer = () => {
   leftDrawerOpen.value = !leftDrawerOpen.value
 }
+
 const logout = () => {
   router.push('/login');
-  useStore.token = undefined;
   localStorage.removeItem('token');
   localStorage.removeItem('usuario');
-
 }
 
 </script>
