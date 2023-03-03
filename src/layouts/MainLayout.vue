@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh Lpr fff">
+  <q-layout view="hHh lpR fFf">
 
     <q-header elevated class="color text-white">
       <q-toolbar >
@@ -10,11 +10,11 @@
           </q-avatar>
           Farm Manager
         </q-toolbar-title>
-        <q-btn v-if="useStore.token != undefined" icon="mdi-login-variant" class="bg-primary" @click="logout"></q-btn>
+        <q-btn icon="mdi-login-variant" class="bg-primary" @click="logout"></q-btn>
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" behavior="desktop" elevated>
+    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" overlay behavior="mobile">
       <!-- drawer content -->
     </q-drawer>
 
